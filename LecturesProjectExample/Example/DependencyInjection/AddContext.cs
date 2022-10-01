@@ -6,7 +6,7 @@ public static class AddContext
 {
     public static IServiceCollection AddJournalContext(this IServiceCollection services)
     {
-        services.AddTransient<JournalContext>();
+        services.AddSingleton<JournalContext>();
 
         return services;
     }
