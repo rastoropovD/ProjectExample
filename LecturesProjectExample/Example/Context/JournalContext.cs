@@ -5,7 +5,18 @@ namespace LecturesProjectExample.Example.Context;
 // emulate db context
 public sealed class JournalContext
 {
-    private static List<StudentEntity> _students = new List<StudentEntity>();
+    private readonly List<StudentEntity> _students;
 
-    public IList<StudentEntity> Students => _students;
+    public IEnumerable<StudentEntity> Students => _students;
+
+
+    public JournalContext()
+    {
+        _students = new List<StudentEntity>();
+    }
+
+    public Task Insert(StudentEntity entity)
+    {
+        return Task.Run(() => _students.Add(entity));
+    }
 }

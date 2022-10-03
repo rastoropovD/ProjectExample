@@ -1,5 +1,6 @@
 ﻿using LecturesProjectExample.Example.Context;
 using LecturesProjectExample.Example.Core.Command;
+using LecturesProjectExample.Example.Entities;
 
 namespace LecturesProjectExample.Example.Commands.AddStudent;
 
@@ -16,5 +17,13 @@ public sealed class AddStudentCommandHandler : ICommandHandler<AddStudentCommand
     {
         // validate command's properties
         // save new item _context.Students.Add(); 
+
+        await _context.Insert(new StudentEntity(
+            command.Id,
+            command.FirstName,
+            command.LastName,
+            command.YearOfStudying,
+            command.Gender)
+        );
     }
 }

@@ -1,21 +1,38 @@
 ﻿using LecturesProjectExample.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using LecturesProjectExample.Example.Context;
+using LecturesProjectExample.Example.Entities;
 
 namespace LecturesProjectExample.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly JournalContext _context;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(JournalContext context, ILogger<HomeController> logger)
         {
+            _context = context;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View();
+            // use query here
+            List<StudentItemViewModel> model = new List<StudentItemViewModel>();
+
+            foreach (StudentEntity entity in _context.Students)
+            {
+                model.Add(new StudentItemViewModel()
+                {
+                    FirstName = entity.FirstName,
+                    LastName = entity.LastName,
+                    YearOfStudying = entity.YearOfStudying
+                });
+            }
+
+            return View(model);
         }
 
         public IActionResult Privacy()
