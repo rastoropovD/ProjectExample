@@ -1,4 +1,6 @@
+using LecturesProjectExample.Example.Data.Context;
 using LecturesProjectExample.Example.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +9,7 @@ builder.Services.AddControllersWithViews();
 
 // Use extension methods for registering dependencies in the DI
 builder.Services
-    .AddJournalContext()
+    .AddJournalContext(builder.Configuration.GetConnectionString("JournalContext"))
     .AddStudentCommands()
     .AddStudentQueries();
 

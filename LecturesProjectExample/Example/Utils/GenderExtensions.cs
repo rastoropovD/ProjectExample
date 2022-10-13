@@ -1,6 +1,6 @@
-﻿using LecturesProjectExample.Example.Entities;
+﻿using LecturesProjectExample.Example.Data.Entities;
 
-namespace LecturesProjectExample.Example.Extensions
+namespace LecturesProjectExample.Example.Utils
 {
     public static class GenderUtils
     {

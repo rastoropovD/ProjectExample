@@ -4,5 +4,10 @@ namespace LecturesProjectExample.Example.Queries.GetStudentById;
 
 public sealed record GetStudentByIdQuery : IQuery
 {
-    // properties for query params
+    public string Id { get; init; }
+
+    public GetStudentByIdQuery(string id)
+    {
+        Id = id;
+    }
 }

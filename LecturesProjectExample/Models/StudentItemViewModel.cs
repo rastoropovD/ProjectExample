@@ -1,4 +1,4 @@
-﻿using LecturesProjectExample.Example.Entities;
+﻿using LecturesProjectExample.Example.Data.Entities;
 
 namespace LecturesProjectExample.Models;
 

@@ -1,5 +1,5 @@
 ﻿using LecturesProjectExample.Example.Core.Command;
-using LecturesProjectExample.Example.Entities;
+using LecturesProjectExample.Example.Data.Entities;
 
 namespace LecturesProjectExample.Example.Commands.AddStudent;
 

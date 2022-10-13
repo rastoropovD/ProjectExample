@@ -1,4 +1,4 @@
-﻿namespace LecturesProjectExample.Example.Entities;
+﻿namespace LecturesProjectExample.Example.Data.Entities;
 
 public enum Gender : byte
 {

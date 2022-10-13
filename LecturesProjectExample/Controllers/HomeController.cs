@@ -1,17 +1,17 @@
 ﻿using LecturesProjectExample.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using LecturesProjectExample.Example.Context;
-using LecturesProjectExample.Example.Entities;
+using LecturesProjectExample.Example.Data.Context;
+using LecturesProjectExample.Example.Data.Entities;
 
 namespace LecturesProjectExample.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly JournalContext _context;
+        private readonly JournalContextDb _context;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(JournalContext context, ILogger<HomeController> logger)
+        public HomeController(JournalContextDb context, ILogger<HomeController> logger)
         {
             _context = context;
             _logger = logger;
